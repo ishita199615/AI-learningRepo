@@ -1,0 +1,312 @@
+# This is the source of truth. Edit this file, not README.md.
+# Run `python scripts/build_readme.py` and the README regenerates.
+#
+# status values: daily-driver | completed | in-progress | partially-completed
+#                reviewed | to-review | reference
+
+meta:
+  title: AI & Data Learning Path
+  tagline: A curated, opinionated path through the courses, tools and references worth your time.
+  author: Ishita Sharma
+  handle: IshitaSharmaDS
+  repo: https://github.com/IshitaSharmaDS/ai-learning-path
+  intro: |
+    Not a link dump. Every entry answers three questions: what is it, who is it for,
+    and how long will it actually take. Anything I haven't personally worked through
+    is marked as such.
+
+    Entries live in `resources.yml`. The README is generated — see CONTRIBUTING.md.
+
+categories:
+  - id: start-here
+    title: Start here
+    blurb: If you're new and want one thing to open first, open the first one.
+    items:
+      - name: Generative AI for Beginners
+        url: https://github.com/microsoft/generative-ai-for-beginners
+        by: Microsoft
+        cost: free
+        level: beginner
+        time: ~20 hours
+        format: 21 lessons, Python + TypeScript
+        status: completed
+        note: >
+          The best free on-ramp to building with LLMs. Lessons split cleanly into
+          "Learn" (concepts) and "Build" (code you run). Needs an Azure OpenAI,
+          GitHub Models, or OpenAI key — GitHub Models is the free path.
+        tags: [genai, llm, prompt-engineering, rag]
+
+      - name: "Neural Networks: Zero to Hero"
+        url: https://github.com/karpathy/nn-zero-to-hero
+        by: Andrej Karpathy
+        cost: free
+        level: intermediate
+        time: ~25 hours
+        format: Video lectures + notebooks
+        status: completed
+        note: >
+          Builds backprop, then a transformer, from scratch in plain Python.
+          The single best way to stop treating models as magic. Slow down and
+          type the code rather than watching it.
+        tags: [deep-learning, transformers, fundamentals]
+
+      - name: Practical Deep Learning for Coders
+        url: https://course.fast.ai
+        by: fast.ai
+        cost: free
+        level: beginner
+        time: ~40 hours
+        format: Video course + fastbook
+        status: partially-completed
+        note: >
+          Top-down: you train a working model in lesson one and learn the theory
+          afterwards. The opposite order to Karpathy, and a good complement to it.
+        tags: [deep-learning, computer-vision, nlp]
+
+  - id: courses
+    title: Courses
+    blurb: Longer structured programmes. Costs and time estimates are the realistic ones, not the marketing ones.
+    items:
+      - name: Machine Learning for Beginners
+        url: https://github.com/microsoft/ML-For-Beginners
+        by: Microsoft
+        cost: free
+        level: beginner
+        time: ~24 hours
+        format: 26 lessons, Python + R
+        status: reviewed
+        note: Classical ML, not deep learning. Regression, clustering, NLP, time series.
+        tags: [machine-learning, python, r]
+
+      - name: Data Science for Beginners
+        url: https://github.com/microsoft/Data-Science-For-Beginners
+        by: Microsoft
+        cost: free
+        level: beginner
+        time: ~20 hours
+        format: 20 lessons
+        status: reviewed
+        note: Ethics, data prep, visualisation, lifecycle. Good for non-CS backgrounds.
+        tags: [data-science, visualization]
+
+      - name: AI for Beginners
+        url: https://github.com/microsoft/AI-For-Beginners
+        by: Microsoft
+        cost: free
+        level: beginner
+        time: ~24 hours
+        format: 12 weeks, 24 lessons
+        status: reviewed
+        note: Broader and more theoretical than the GenAI course. Symbolic AI through neural networks.
+        tags: [ai, deep-learning, fundamentals]
+
+      - name: AI Agents for Beginners
+        url: https://github.com/microsoft/ai-agents-for-beginners
+        by: Microsoft
+        cost: free
+        level: intermediate
+        time: ~12 hours
+        format: Lessons + code
+        status: in-progress
+        note: Agent design patterns, tool use, planning. Do the GenAI course first.
+        tags: [agents, llm]
+
+      - name: MCP for Beginners
+        url: https://github.com/microsoft/mcp-for-beginners
+        by: Microsoft
+        cost: free
+        level: intermediate
+        time: ~8 hours
+        format: Lessons + code
+        status: to-review
+        note: >
+          Model Context Protocol is becoming the standard way tools attach to
+          models. Worth understanding before you write another bespoke tool schema.
+        tags: [mcp, agents, tooling]
+
+      - name: Machine Learning Zoomcamp
+        url: https://github.com/DataTalksClub/machine-learning-zoomcamp
+        by: DataTalks.Club
+        cost: free
+        level: beginner
+        time: ~4 months
+        format: Cohort course + projects
+        status: reviewed
+        note: Deployment-focused. You ship models, not just train them. Runs as a cohort with deadlines.
+        tags: [machine-learning, mlops, deployment]
+
+      - name: Data Engineering Zoomcamp
+        url: https://github.com/DataTalksClub/data-engineering-zoomcamp
+        by: DataTalks.Club
+        cost: free
+        level: intermediate
+        time: ~4 months
+        format: Cohort course + projects
+        status: to-review
+        note: dbt, Spark, Kafka, orchestration, warehousing. The gap most data scientists have.
+        tags: [data-engineering, spark, dbt]
+
+      - name: Open Source Society University — Data Science
+        url: https://github.com/ossu/data-science
+        by: OSSU
+        cost: free
+        level: beginner
+        time: 2+ years
+        format: Full curriculum
+        status: reference
+        note: >
+          A complete degree-equivalent path. Realistically nobody finishes it,
+          but it's an excellent map for finding the gaps in your own knowledge.
+        tags: [curriculum, data-science, mathematics]
+
+  - id: tools
+    title: Tools
+    blurb: Free, open source, and worth the install. Each line says what it replaces.
+    items:
+      - name: ollama
+        url: https://github.com/ollama/ollama
+        by: Ollama
+        cost: free
+        level: beginner
+        time: 5 minutes
+        format: CLI
+        status: daily-driver
+        note: Run open language models locally. One command to install, one to pull a model.
+        tags: [llm, local-ai]
+
+      - name: vLLM
+        url: https://github.com/vllm-project/vllm
+        by: vLLM project
+        cost: free
+        level: advanced
+        time: ~1 hour
+        format: Python library / server
+        status: reviewed
+        note: >
+          Production inference. Continuous batching and an OpenAI-compatible
+          endpoint, which matters more than the throughput — swapping providers
+          becomes a base-URL change.
+        tags: [llm, serving, gpu]
+
+      - name: DuckDB
+        url: https://github.com/duckdb/duckdb
+        by: DuckDB Labs
+        cost: free
+        level: beginner
+        time: 15 minutes
+        format: Embedded database
+        status: daily-driver
+        note: >
+          Query millions of rows straight from CSV or Parquet with no server.
+          Benchmarks in my duckdb-vs-pandas repo if you want numbers.
+        tags: [analytics, sql, data]
+
+      - name: Whisper
+        url: https://github.com/openai/whisper
+        by: OpenAI
+        cost: free
+        level: beginner
+        time: 20 minutes
+        format: Python library
+        status: daily-driver
+        note: Speech to text, offline, 90+ languages. Use faster-whisper for real workloads.
+        tags: [speech, transcription]
+
+      - name: LangGraph
+        url: https://github.com/langchain-ai/langgraph
+        by: LangChain
+        cost: free
+        level: intermediate
+        time: ~3 hours
+        format: Python library
+        status: in-progress
+        note: >
+          Agent loops as state machines, with checkpointing and interrupt points.
+          The distinction that matters: a chain runs steps you defined, an agent
+          runs a loop where the model decides.
+        tags: [agents, orchestration]
+
+      - name: Langfuse
+        url: https://github.com/langfuse/langfuse
+        by: Langfuse
+        cost: free
+        level: intermediate
+        time: ~1 hour
+        format: Self-hosted service
+        status: reviewed
+        note: >
+          Token cost per run, latency per node, prompt versioning. Grafana
+          understands CPU; it does not understand tokens. You need both.
+        tags: [observability, evals, llmops]
+
+      - name: Supabase
+        url: https://github.com/supabase/supabase
+        by: Supabase
+        cost: freemium
+        level: beginner
+        time: ~1 hour
+        format: Hosted or self-hosted
+        status: reviewed
+        note: Postgres with auth, storage, realtime and pgvector. One dependency instead of four.
+        tags: [database, backend, pgvector]
+
+      - name: Docling
+        url: https://github.com/docling-project/docling
+        by: IBM
+        cost: free
+        level: intermediate
+        time: ~1 hour
+        format: Python library
+        status: to-review
+        note: >
+          Document parsing that preserves table structure. Mangled tables are the
+          most common silent cause of confidently wrong RAG answers.
+        tags: [rag, parsing, documents]
+
+  - id: references
+    title: References
+    blurb: Things I reopen rather than read once.
+    items:
+      - name: The fastai book
+        url: https://github.com/fastai/fastbook
+        by: Howard & Gugger
+        cost: free
+        level: beginner
+        time: reference
+        format: Jupyter notebooks
+        status: reference
+        note: Full text of the O'Reilly book as runnable notebooks.
+        tags: [deep-learning, book]
+
+      - name: LLM101n
+        url: https://github.com/karpathy/LLM101n
+        by: Andrej Karpathy
+        cost: free
+        level: intermediate
+        time: reference
+        format: Course repo
+        status: to-review
+        note: Build a storyteller LLM from scratch. Still evolving — check activity before committing.
+        tags: [llm, from-scratch]
+
+      - name: System Design Primer
+        url: https://github.com/donnemartin/system-design-primer
+        by: Donne Martin
+        cost: free
+        level: intermediate
+        time: reference
+        format: Markdown + flashcards
+        status: reference
+        note: Not AI-specific, but the vocabulary you need the moment a model goes to production.
+        tags: [system-design, interviews]
+
+      - name: smol-course
+        url: https://github.com/huggingface/smol-course
+        by: Hugging Face
+        cost: free
+        level: intermediate
+        time: ~10 hours
+        format: Notebooks
+        status: to-review
+        note: Aligning and fine-tuning small models on modest hardware.
+        tags: [fine-tuning, small-models]
